@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../share/component.dart';
@@ -33,7 +34,7 @@ class MainScreen extends StatelessWidget {
                                   children: [
                                     const Center(
                                       child: Text(
-                                        'slat elzoher',
+                                        'صلاة الفجر',
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold,
                                             fontSize: 20
@@ -46,6 +47,7 @@ class MainScreen extends StatelessWidget {
                                       color: Colors.yellow.shade700,
                                       size: 30,
                                     )
+
                                   ],
                                 ),
                                 const SizedBox(height: 10,),
@@ -53,33 +55,20 @@ class MainScreen extends StatelessWidget {
                                   children: [
                                     Expanded(
                                       child: Column(
-                                        children:   [
-                                         DropdownButtonExample(dropdownValue: soraCondition.first,condition:soraCondition),
-                                           const SizedBox(height: 10,),
-                                          Container(
-                                            decoration: BoxDecoration(
-                                              color: Colors.green,
-                                              borderRadius: BorderRadius.circular(5),
-                                              boxShadow:const [
-                                                BoxShadow(
-                                                  color: Colors.grey,
-                                                  blurRadius: 15,
-                                                  offset: Offset(2, 5),
-                                                ),
-                                              ],
-                                            ),
-                                            child: const Text(
-                                              'سورة الكهف ',
-                                              style: TextStyle(
-                                                fontSize: 24.0,
-                                                color: Colors.black,
-                                                decoration: TextDecoration.none,
-                                                fontStyle: FontStyle.normal,
+                                        children: const [
+                                          Text(
+                                            'السورة التي قرأت',
+                                            style: TextStyle(
                                                 fontWeight: FontWeight.bold,
-                                              ),
-                                              maxLines: 4,
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.center,
+                                                fontSize: 14
+                                            ),
+                                          ),
+                                          SizedBox(height: 10,),
+                                          Text(
+                                            'سورة الكهف ',
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 14
                                             ),
                                           ),
                                         ],
@@ -87,63 +76,34 @@ class MainScreen extends StatelessWidget {
                                     ),
                                     const SizedBox(width: 10),
                                     Column(
-                                      children:  [
-                                       statOfCondition! ? DropdownButtonExample(dropdownValue: prayCondition.first,condition:prayCondition):  Container(
-                                          decoration: BoxDecoration(
-                                            color: Colors.green,
-                                            borderRadius: BorderRadius.circular(5),
-                                            boxShadow:const [
-                                              BoxShadow(
-                                                color: Colors.grey,
-                                                blurRadius: 15,
-                                                offset: Offset(2, 5),
-                                              ),
-                                            ],
-                                          ),
-                                          child: const Text(
-                                            'أديتها أول الوقت جماعة ',
-                                            style: TextStyle(
-                                              fontSize: 24.0,
-                                              color: Colors.black,
-                                              decoration: TextDecoration.none,
-                                              fontStyle: FontStyle.normal,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                            maxLines: 4,
-                                            overflow: TextOverflow.ellipsis,
-                                            textAlign: TextAlign.center,
-                                          ),
-                                        ),
-                                        const SizedBox(
+                                      children: const [
+                                        DropdownButtonExample(),
+                                        // DropdownButton<String>(
+                                        //   value: prayValue,
+                                        //   onChanged: (String? newValue) {
+                                        //     setState(() {
+                                        //       prayValue = newValue!;
+                                        //     });
+                                        //     print(newValue);
+                                        //   },
+                                        //   items: prayCondition
+                                        //       .map<DropdownMenuItem<String>>(
+                                        //           (String value) {
+                                        //     return DropdownMenuItem<String>(
+                                        //       value: value,
+                                        //       child: Text(value),
+                                        //     );
+                                        //   }).toList(),
+                                        // ),
+                                        SizedBox(
                                           height: 10,
                                         ),
-                                        Container(
-                                          decoration: BoxDecoration(
-                                            color: Colors.green,
-                                            borderRadius: BorderRadius.circular(5),
-                                            boxShadow:const [
-                                              BoxShadow(
-                                                color: Colors.grey,
-                                                blurRadius: 15,
-                                                offset: Offset(2, 5),
-                                              ),
-                                            ],
-                                          ),
-                                          child: const Text(
-                                            'أديتها أول الوقت جماعة ',
-                                            style: TextStyle(
-                                              fontSize: 24.0,
-                                              color: Colors.black,
-                                              decoration: TextDecoration.none,
-                                              fontStyle: FontStyle.normal,
+                                        Text(
+                                          'أديتها أول الوقت جماعة ',
+                                          style: TextStyle(
                                               fontWeight: FontWeight.bold,
-                                            ),
-                                            maxLines: 4,
-                                            overflow: TextOverflow.ellipsis,
-                                            textAlign: TextAlign.center,
-                                          ),
-                                        )
-
+                                              fontSize: 14),
+                                        ),
                                       ],
                                     ),
                                     const SizedBox(width: 20),
