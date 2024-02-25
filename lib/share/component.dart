@@ -46,3 +46,10 @@ final List<String> prayCondition = [
   'تأخرت في آادءها ',
   'خرجت من الوقت '
 ];
+final List<String> soraCondition = [
+  'سورة النساء ',
+  'سورة آل عمران',
+  'سورة البقرة',
+];
+
+bool ? statOfCondition = true ;

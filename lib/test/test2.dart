@@ -1,29 +1,37 @@
 import 'package:flutter/material.dart';
 
 import '../share/component.dart';
-
 class DropdownButtonExample extends StatefulWidget {
-  const DropdownButtonExample({super.key});
-
+  String dropdownValue ;
+  List<String>  condition;
+  bool ? statOfCondition = true ;
+  DropdownButtonExample({super.key , required this. dropdownValue , required this.condition });
   @override
   State<DropdownButtonExample> createState() => _DropdownButtonExampleState();
 }
 
 class _DropdownButtonExampleState extends State<DropdownButtonExample> {
-  String dropdownValue = prayCondition.first;
-
+  bool ? statOfCondition = true ;
   @override
   Widget build(BuildContext context) {
+    // widget.dropdownValue  = prayCondition.first ;
     return DropdownButton<String>(
-      value: dropdownValue,
-
+      value: widget.dropdownValue ,
       onChanged: (String? value) {
+        print(value);
+        // if(value == prayCondition.first) {
+        //   statOfCondition = true;
+        // }else {
+        //   statOfCondition = false;
+        // }
         // This is called when the user selects an item.
         setState(() {
-          dropdownValue = value!;
+          statOfCondition = false;
+         widget.dropdownValue  = value!;
+
         });
       },
-      items: prayCondition.map<DropdownMenuItem<String>>((String value) {
+      items: widget.condition.map<DropdownMenuItem<String>>((String value) {
         return DropdownMenuItem<String>(
           value: value,
           child: Text(value),
@@ -32,3 +40,4 @@ class _DropdownButtonExampleState extends State<DropdownButtonExample> {
     );
   }
 }
+
